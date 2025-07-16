@@ -4,7 +4,6 @@
 extern crate alloc;
 mod constructor;
 mod extras;
-use extras::*;
 
 use {
     alloc::{

@@ -1,4 +1,3 @@
-#![doc = include_str!("../README.md")]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
 #![recursion_limit = "128"]
 #![cfg_attr(any(not(docsrs), ci), deny(rustdoc::all))]
