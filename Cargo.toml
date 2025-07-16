@@ -7,11 +7,65 @@ repository = "https://github.com/liagha/derivor"
 license = "MIT OR Apache-2.0"
 
 [features]
-default = ["structs", "enums", "unions"]
+default = ["std", "unwrap", "structs", "enums", "unions"]
 enums = ["dep:heck"]
 shorthand = []
 structs = []
 unions = []
+add = ["derive_more-impl/add"]
+add_assign = ["derive_more-impl/add_assign"]
+as_ref = ["derive_more-impl/as_ref"]
+constructor = ["derive_more-impl/constructor"]
+debug = ["derive_more-impl/debug"]
+deref = ["derive_more-impl/deref"]
+deref_mut = ["derive_more-impl/deref_mut"]
+display = ["derive_more-impl/display"]
+eq = ["derive_more-impl/eq"]
+error = ["derive_more-impl/error"]
+from = ["derive_more-impl/from"]
+from_str = ["derive_more-impl/from_str"]
+index = ["derive_more-impl/index"]
+index_mut = ["derive_more-impl/index_mut"]
+into = ["derive_more-impl/into"]
+into_iterator = ["derive_more-impl/into_iterator"]
+is_variant = ["derive_more-impl/is_variant"]
+mul = ["derive_more-impl/mul"]
+mul_assign = ["derive_more-impl/mul_assign"]
+not = ["derive_more-impl/not"]
+sum = ["derive_more-impl/sum"]
+try_from = ["derive_more-impl/try_from"]
+try_into = ["derive_more-impl/try_into"]
+try_unwrap = ["derive_more-impl/try_unwrap"]
+unwrap = ["derive_more-impl/unwrap"]
+
+std = []
+full = [
+    "add",
+    "add_assign",
+    "as_ref",
+    "constructor",
+    "debug",
+    "deref",
+    "deref_mut",
+    "display",
+    "eq",
+    "error",
+    "from",
+    "from_str",
+    "index",
+    "index_mut",
+    "into",
+    "into_iterator",
+    "is_variant",
+    "mul",
+    "mul_assign",
+    "not",
+    "sum",
+    "try_from",
+    "try_into",
+    "try_unwrap",
+    "unwrap",
+]
 
 [lib]
 proc-macro = true
@@ -21,3 +75,20 @@ syn = { version = "2.0.*" }
 quote = { version = "1.*" }
 proc-macro2 = { version = "1.0.*" }
 heck = { version = "0.5.*", optional = true }
+derive_more-impl = { version = "=2.0.1", path = "impl" }
+
+[build-dependencies]
+rustc_version = { version = "0.4", optional = true }
+
+[dev-dependencies]
+rustversion = "1.0"
+static_assertions = "1.1"
+trybuild = "1.0.56"
+
+[workspace]
+members = ["impl"]
+
+include = [
+    "src/**/*.rs",
+    "Cargo.toml",
+]

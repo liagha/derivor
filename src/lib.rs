@@ -4,6 +4,7 @@
 extern crate alloc;
 mod constructor;
 mod extras;
+use extras::*;
 
 use {
     alloc::{
@@ -68,3 +69,4 @@ fn test_adjust_keyword_ident() {
     assert_eq!("r#fn".to_string(), adjust_keyword_ident("fn".to_string()));
     assert_eq!("r#const".to_string(), adjust_keyword_ident("const".to_string()));
 }
+
