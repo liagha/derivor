@@ -1,0 +1,9 @@
+[package]
+name = "derivor"
+version = "0.0.1"
+edition = "2021"
+description = "Some useful Derive(Trait) macro options."
+repository = "https://github.com/liagha/derivor"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
