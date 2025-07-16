@@ -6,4 +6,18 @@ description = "Some useful Derive(Trait) macro options."
 repository = "https://github.com/liagha/derivor"
 license = "MIT OR Apache-2.0"
 
+[features]
+default = ["structs", "enums", "unions"]
+enums = ["dep:heck"]
+shorthand = []
+structs = []
+unions = []
+
+[lib]
+proc-macro = true
+
 [dependencies]
+syn = { version = "2.0.*" }
+quote = { version = "1.*" }
+proc-macro2 = { version = "1.0.*" }
+heck = { version = "0.5.*", optional = true }
